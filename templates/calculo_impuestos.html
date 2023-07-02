@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .nav-pills li a:hover {
+        background-color: rgb(140, 61, 243);
+    }
+</style>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="d-flex flex-column justify-content-between col-auto bg-dark min-vh-100">
+            <div class="mt-4">
+                <a class="text-white d-none d-sm-inline text-decoration-none d-flex align-items-center ms-4"
+                    role="button" href="">
+                    <span class="fs-5">Cálculo de impuestos</span>
+                </a>
+                <hr class="text-white d-none d-sm-block" />
+                <ul class="nav nav-pills flex-column mt-2 mt-sm-0" id="menu">
+
+                    <li class="nav-item disabled">
+                        <a href="#sidemenu" data-bs-toggle="collapse" class="nav-link text-white" aria-current="page">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-add-fill" viewBox="0 0 16 16">
+                                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 1 1-1 0v-1h-1a.5.5 0 1 1 0-1h1v-1a.5.5 0 0 1 1 0Z"/>
+                                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+                                <path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+                              </svg>
+
+                            <span class="ms-2 d-none d-sm-inline">Ingresos</span>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                            </svg> </a>
+
+                        <ul class="nav nav-pills collapse ms-2 flex-column" id="sidemenu" data-bs-parent="#menu">
+                            <li class="nav-item my-sm-1 my-2">
+                                <a class="nav-link text-white" href="#" aria-current="page">- Arrendamiento de habitaciones</a>
+                            </li>
+                            <li class="nav-item my-sm-1 my-2">
+                                <a class="nav-link text-white" href="#">- Arrendamiento de espacio</a>
+                            </li>
+                            
+                        </ul>
+
+                </ul>
+                <ul class="nav nav-pills flex-column mt-2 mt-sm-0" id="menu">
+                    <li class="nav-item disabled">
+                        <a href="#sidemenu2" data-bs-toggle="collapse" class="nav-link text-white" aria-current="page">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-dash-fill" viewBox="0 0 16 16">
+                                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+                                <path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+                                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 1 1 0-1Z"/>
+                              </svg>
+                            <span class="ms-2 d-none d-sm-inline"> Gastos </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                            </svg> </a>
+                        <ul class="nav nav-pills flex-column mt-2 mt-sm-0 collapse ms-1" id="sidemenu2"
+                            data-bs-parent="#menu1">
+                            <li class="nav-item my-sm-1 my-2">
+                                <a class="nav-link text-white" href="/registro_ingreso_espacio" aria-current="page">- Arrendamiento de habitaciones</a>
+                            </li>
+                            <li class="nav-item my-sm-1 my-2">
+                                <a class="nav-link text-white" href="/listado_ingresos_espacio">- Arrendamiento de espacio</a>
+                            </li>
+                        </ul>
+                 </ul>
+                <ul class="nav nav-pills flex-column mt-2 mt-sm-0" id="menu">
+                    <li class="nav-item my-sm-1 my-2">
+                        <a href="/listado_ingresos_totales" class="nav-link text-white text-sm-start" aria-current="page">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calculator-fill" viewBox="0 0 16 16">
+                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 .5v2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5zm0 4v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM4 12.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM7.5 6a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM7 9.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM10 6.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5h-1z"/>
+                              </svg>
+                            <span class="ms-2 d-none d-sm-inline"> Pago de tributo por el <br>arrendamiento de habitaciones</span>
+
+                        </a>
+                    </li>
+                    </li>
+                </ul>
+                <ul class="nav nav-pills flex-column mt-2 mt-sm-0" id="menu">
+                    <li class="nav-item my-sm-1 my-2">
+                        <a href="/listado_ingresos_totales" class="nav-link text-white text-sm-start" aria-current="page">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calculator" viewBox="0 0 16 16">
+                                <path d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
+                                <path d="M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-2zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-4z"/>
+                              </svg>
+                            <span class="ms-2 d-none d-sm-inline"> Pago de tributo por el <br>arrendamiento de espacio</span>
+
+                        </a>
+                    </li>
+                    </li>
+                </ul>
+                <ul class="nav nav-pills flex-column mt-2 mt-sm-0" id="menu">
+                    <li class="nav-item my-sm-1 my-2">
+                        <a href="/listado_ingresos_totales" class="nav-link text-white text-sm-start" aria-current="page">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2-check-fill" viewBox="0 0 16 16">
+                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zm9.954 3H2.545c-.3 0-.545.224-.545.5v1c0 .276.244.5.545.5h10.91c.3 0 .545-.224.545-.5v-1c0-.276-.244-.5-.546-.5zm-2.6 5.854a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                              </svg>
+                            <span class="ms-2 d-none d-sm-inline"> Vector fiscal</span>
+
+                        </a>
+                    </li>
+                    </li>
+                </ul>
+                <ul class="nav nav-pills flex-column mt-2 mt-sm-0" id="menu">
+                    <li class="nav-item disabled">
+                        <a href="#sidemenu3" data-bs-toggle="collapse" class="nav-link text-white" aria-current="page">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pass-fill" viewBox="0 0 16 16">
+                                <path d="M10 0a2 2 0 1 1-4 0H3.5A1.5 1.5 0 0 0 2 1.5v13A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 12.5 0H10ZM4.5 5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1Zm0 2h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1 0-1Z"/>
+                              </svg>
+                            <span class="ms-2 d-none d-sm-inline"> Declaración Jurada DJ-08 </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                            </svg> </a>
+                        <ul class="nav nav-pills flex-column mt-2 mt-sm-0 collapse ms-1" id="sidemenu3"
+                            data-bs-parent="#menu1">
+                            <li class="nav-item my-sm-1 my-2">
+                                <a class="nav-link text-white" href="/registro_ingreso_espacio" aria-current="page">- Sección A</a>
+                            </li>
+                            <li class="nav-item my-sm-1 my-2">
+                                <a class="nav-link text-white" href="/listado_ingresos_espacio">- Sección B a la F</a>
+                            </li>
+                            <li class="nav-item my-sm-1 my-2">
+                                <a class="nav-link text-white" href="/listado_ingresos_espacio">- Sección G</a>
+                            </li>
+                        </ul>
+                </ul>
+            </div>
+            <div>
+                bs5 <div class="dropdown show">
+                    <a class="btn border-none outline-none text-white dropdown-toggle" type="button" id="triggerId"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                        </svg>
+                        <span>{{user.username}}</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="triggerId">
+
+                        <a class="dropdown-item" href="/cerrar_sesion">Cerrar Sesión</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <!-- Información -->
+             <style>
+                
+             .prueba{
+                background-image: url('{% static 'imagen/claro2.jpg' %}');
+                background-size: cover;
+                background-repeat: no-repeat;
+             }
+
+             </style>
+            
+              <body class="prueba">
+                <br>
+                <h1 class="text-left" style="font-size: 50px; margin-left: 50px;"><strong> Cálculo de impuestos</strong></h1>
+              </body>           
+        
+              <div class="container">
+                <a class="btn btn-outline-primary btn-sm rounded-pill shadow p-2" href="{% url 'home' %}"
+                    style="position: fixed; bottom: 25px;">
+                    <i class="bi bi-house-fill me-1"></i>Menú principal
+                </a>
+            </div>
+          </div>
+    </div>
+
+    {% endblock %}

@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .nav-pills li a:hover {
+        background-color: rgb(140, 61, 243);
+    }
+</style>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="d-flex flex-column justify-content-between col-auto bg-dark min-vh-100">
+            <div class="mt-4">
+                <a class="text-white d-none d-sm-inline text-decoration-none d-flex align-items-center ms-4"
+                    role="button" href="">
+                    <span class="fs-5">Registro de clientes</span>
+                </a>
+                <hr class="text-white d-none d-sm-block" />
+                <ul class="nav nav-pills flex-column mt-2 mt-sm-0" id="menu">
+
+                    <li class="nav-item disabled">
+                        <a href="#sidemenu" data-bs-toggle="collapse" class="nav-link text-white" aria-current="page">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
+                            </svg>
+
+                            <span class="ms-2 d-none d-sm-inline">Arrendamiento de habitaciones</span>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                            </svg> </a>
+
+                        <ul class="nav nav-pills collapse ms-2 flex-column" id="sidemenu" data-bs-parent="#menu">
+                            <li class="nav-item my-sm-1 my-2">
+                                <a class="nav-link text-white" href="/registro_clientes" aria-current="page">- Registro
+                                    de clientes</a>
+                            </li>
+                            <li class="nav-item my-sm-1 my-2">
+                                <a class="nav-link text-white" href="/listado_clientes_reg">- Listado de clientes
+                                    registrados</a>
+                            </li>
+                            <li class="nav-item my-sm-1 my-2">
+                                <a class="nav-link text-white" href="/listado_clientes_act">- Listado de clientes
+                                    actuales</a>
+                            </li>
+                            <li class="nav-item my-sm-1 my-2">
+                                <a class="nav-link text-white" href="/indice_ocupacional">- Índice Ocupacional</a>
+                            </li>
+                        </ul>
+
+                </ul>
+                <ul class="nav nav-pills flex-column mt-2 mt-sm-0" id="menu">
+                    <li class="nav-item disabled">
+                        <a href="#sidemenu2" data-bs-toggle="collapse" class="nav-link text-white" aria-current="page">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-easel-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.473.337a.5.5 0 0 0-.946 0L6.954 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h1.85l-1.323 3.837a.5.5 0 1 0 .946.326L4.908 11H7.5v2.5a.5.5 0 0 0 1 0V11h2.592l1.435 4.163a.5.5 0 0 0 .946-.326L12.15 11H14a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H9.046L8.473.337z" />
+                            </svg>
+                            <span class="ms-2 d-none d-sm-inline"> Arrendamiento de
+                                espacio</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                            </svg> </a>
+                        <ul class="nav nav-pills flex-column mt-2 mt-sm-0 collapse ms-1" id="sidemenu2"
+                            data-bs-parent="#menu1">
+                            <li class="nav-item my-sm-1 my-2">
+                                <a class="nav-link text-white" href="/registro_ingreso_espacio" aria-current="page">-
+                                    Registro del ingreso por
+                                    espacio</a>
+                            </li>
+                            <li class="nav-item my-sm-1 my-2">
+                                <a class="nav-link text-white" href="/listado_ingresos_espacio">- Listado de ingreso de
+                                    espacio</a>
+                            </li>
+                        </ul>
+                </ul>
+                <ul class="nav nav-pills flex-column mt-2 mt-sm-0" id="menu">
+                    <li class="nav-item my-sm-1 my-2">
+                        <a href="/listado_ingresos_totales" class="nav-link text-white text-center text-sm-start"
+                            aria-current="page">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-list-ol" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z" />
+                                <path
+                                    d="M1.713 11.865v-.474H2c.217 0 .363-.137.363-.317 0-.185-.158-.31-.361-.31-.223 0-.367.152-.373.31h-.59c.016-.467.373-.787.986-.787.588-.002.954.291.957.703a.595.595 0 0 1-.492.594v.033a.615.615 0 0 1 .569.631c.003.533-.502.8-1.051.8-.656 0-1-.37-1.008-.794h.582c.008.178.186.306.422.309.254 0 .424-.145.422-.35-.002-.195-.155-.348-.414-.348h-.3zm-.004-4.699h-.604v-.035c0-.408.295-.844.958-.844.583 0 .96.326.96.756 0 .389-.257.617-.476.848l-.537.572v.03h1.054V9H1.143v-.395l.957-.99c.138-.142.293-.304.293-.508 0-.18-.147-.32-.342-.32a.33.33 0 0 0-.342.338v.041zM2.564 5h-.635V2.924h-.031l-.598.42v-.567l.629-.443h.635V5z" />
+                            </svg>
+                            <span class="ms-2 d-none d-sm-inline"> Listado de ingresos totales</span>
+
+                        </a>
+                    </li>
+                    </li>
+                </ul>
+
+                </ul>
+            </div>
+            <div>
+                <div class="dropdown show">
+                    <a class="btn border-none outline-none text-white dropdown-toggle" type="button" id="triggerId"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                        </svg>
+                        <span>{{user.username}}</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="triggerId">
+
+                        <a class="dropdown-item" href="/cerrar_sesion">Cerrar Sesión</a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-9">
+            <!-- Información -->
+            <br>
+            <h1 class="text-center">Modificar cliente</h1>
+
+            <form class="row g-3 p-3" action="/editar_cliente/" method="POST">
+                {% csrf_token %}
+
+                {% if form.errors %}
+                <h5 class="alert alert-danger">{{form.errors}}</h5>
+                {% endif %}
+                <div class="col-md-2">
+                    <label for="validationDefault01" class="form-label">No. Orden</label>
+                    <input type="number" name="no_de_orden" value={{clientes_edit.no_de_orden}} class="form-control"
+                        min="0" id="validationDefault01" required>
+                </div>
+                <div class="col-md-5">
+                    <label for="validationDefault01" class="form-label">Nombre</label>
+                    <input type="text" name="nombre" value={{clientes_edit.nombre}} class="form-control"
+                        id="validationDefault01" required>
+                </div>
+                <div class="col-md-5">
+                    <label for="validationDefault02" class="form-label">Apellidos</label>
+                    <input type="text" name="apellidos" value={{clientes_edit.apellidos}} class="form-control"
+                        id="validationDefault02" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefaultUsername" class="form-label">Documento de identidad</label>
+                    <div class="input-group">
+                        <input type="text" name="documento_identidad" value={{clientes_edit.documento_identidad}}
+                            class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2"
+                            required>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault04" class="form-label">Ciudadano</label>
+                    <select class="form-select" name="citizenship" id="validationDefault04" required>
+                        <option selected disabled value="">Eligir...</option>
+                        <option {% if clientes_edit.citizenship == 'Alemania' %}selected{% endif %}>Alemania</option>
+                        <option {% if clientes_edit.citizenship == 'Gran Bretaña' %}selected{% endif %}>Gran Bretaña</option>
+                    </select>
+                </div>
+                
+                <div class="col-md-3">
+                    <label for="validationDefault03" class="form-label">Fecha de nacimiento</label>
+                    <input type="date" name="fecha_nacimiento" value="{{clientes_edit.fecha_nacimiento|date:'Y-m-d'}}"
+                        class="form-control" id="validationDefault03" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault04" class="form-label">Estado</label>
+                    <select class="form-select" name="estado" id="validationDefault04" required>
+                        <option selected disabled value="">Eligir...</option>
+                        <option {% if clientes_edit.estado == 'Principal' %}selected{% endif %}>Principal</option>
+                        <option {% if clientes_edit.estado == 'Acompañante' %}selected{% endif %}>Acompañante</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault03" class="form-label">Fecha de entrada</label>
+                    <input type="date" name="fecha_entrada" value="{{clientes_edit.fecha_entrada|date:'Y-m-d'}}"
+                        class="form-control" id="validationDefault03" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault03" class="form-label">Cantidad de noches</label>
+                    <input type="number" name="cantidad_noches" value={{clientes_edit.cantidad_noches}} min='0'
+                        class="form-control" id="validationDefault03" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault03" class="form-label">Fecha de salida</label>
+                    <input type="date" name="fecha_salida" value="{{clientes_edit.fecha_salida|date:'Y-m-d'}}"
+                        class="form-control" id="validationDefault03" required>
+                </div>
+                
+                <div class="col-md-3">
+                    <label for="validationDefault04" class="form-label">Objeto de arrendamiento</label>
+                    <select class="form-select" name="objeto_arrendamiento" id="validationDefault04" required>
+                        <option selected disabled value="">Eligir...</option>
+                        <option {% if clientes_edit.objeto_arrendamiento == '7 habitaciones y 5 espacios' %}selected{% endif %}>7 habitaciones y 5 espacios</option>
+                    </select>
+                </div>
+                
+                <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Recibo de pago</label>
+                    <input type="number" name="recibo_pago" value={{clientes_edit.recibo_pago}} class="form-control"
+                        id="validationDefault05" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Info registro</label>
+                    <input type="number" name="info_registro" value={{clientes_edit.info_registro}} class="form-control"
+                        id="validationDefault05" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Ingreso por alojamiento</label>
+                    <input type="text" name="ingreso_alojamiento" value={{clientes_edit.ingreso_alojamiento}}
+                        class="form-control" id="validationDefault05" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Ingreso por desayuno</label>
+                    <input type="text" name="ingreso_desayuno" value={{clientes_edit.ingreso_desayuno}}
+                        class="form-control" id="validationDefault05" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Ingreso por almuerzo</label>
+                    <input type="text" name="ingreso_almuerzo" value={{clientes_edit.ingreso_almuerzo}}
+                        class="form-control" id="validationDefault05" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Ingreso total</label>
+                    <input type="text" name="ingreso_total" value={{clientes_edit.ingreso_total}} class="form-control"
+                        id="validationDefault05" required>
+                </div>
+
+
+                <div class="col-12 d-grid gap-4 d-md-flex justify-content-md-end">
+                    <br>
+                    <button class="btn btn-primary" type="submit">
+                        Modificar
+                    </button>
+
+                    <button class="btn btn-primary">
+                        Cancelar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    {% endblock %}

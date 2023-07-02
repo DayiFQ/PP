@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>¿Estás seguro de que quieres eliminar este cliente?</h1>
+  <p>Nombre: {{ cliente.nombre }}</p>
+  <p>Documento de identidad: {{ cliente.documento_identidad }}</p>
+  <form method="post">
+    {% csrf_token %}
+    <input type="hidden" name="documento_identidad" value="{{ cliente.documento_identidad }}">
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a href="{% url 'listado_clientes_reg' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+{% endblock %}

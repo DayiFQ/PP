@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .nav-pills li a:hover {
+        background-color: rgb(140, 61, 243);
+    }
+</style>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="d-flex flex-column justify-content-between col-auto bg-dark min-vh-100">
+            <div class="mt-4">
+                <a class="text-white d-none d-sm-inline text-decoration-none d-flex align-items-center ms-4"
+                    role="button" href="">
+                    <span class="fs-5">Disponibilidad</span>
+                </a>
+                <hr class="text-white d-none d-sm-block" />
+                
+                 
+                <ul class="nav nav-pills flex-column mt-2 mt-sm-0" id="menu">
+                    <li class="nav-item my-sm-1 my-2">
+                        <a href="#" class="nav-link text-white text-center text-sm-start" aria-current="page">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                              </svg>
+                            <span class="ms-2 d-none d-sm-inline"> Arrendamiento por <br>habitaciones</span>
+
+                        </a>
+                    </li>
+                    </li>
+                </ul>
+                <ul class="nav nav-pills flex-column mt-2 mt-sm-0" id="menu">
+                    <li class="nav-item my-sm-1 my-2">
+                        <a href="#" class="nav-link text-white text-center text-sm-start" aria-current="page">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                              </svg>
+                            <span class="ms-2 d-none d-sm-inline"> Arrendamiento por <br>camas</span>
+
+                        </a>
+                    </li>
+                    </li>
+                </ul>
+
+                </ul>
+            </div>
+            <div>
+                bs5 <div class="dropdown show">
+                    <a class="btn border-none outline-none text-white dropdown-toggle" type="button" id="triggerId"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                        </svg>
+                        <span>{{user.username}}</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="triggerId">
+
+                        <a class="dropdown-item" href="/cerrar_sesion">Cerrar Sesión</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <!-- Información -->
+             <style>
+                
+             .prueba{
+                background-image: url('{% static 'imagen/claro2.jpg' %}');
+                background-size: cover;
+                background-repeat: no-repeat;
+             }
+
+             </style>
+            
+              <body class="prueba">
+                <br>
+                <h1 class="text-left" style="font-size: 50px; margin-left: 50px;"><strong> Disponibilidad</strong></h1>
+              </body>           
+        
+              <div class="container">
+                <a class="btn btn-outline-primary btn-sm rounded-pill shadow p-2" href="{% url 'home' %}"
+                    style="position: fixed; bottom: 25px;">
+                    <i class="bi bi-house-fill me-1"></i>Menú principal
+                </a>
+            </div>
+          </div>
+    </div>
+
+    {% endblock %}
